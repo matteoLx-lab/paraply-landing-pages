@@ -26,10 +26,10 @@ export function CrossIcon({ className = "" }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      <rect x="1" y="1" width="18" height="18" rx="3" className="fill-ink/10" />
+      <rect x="1" y="1" width="18" height="18" rx="3" className="fill-card-border/40" />
       <path
         d="M6 6l8 8M14 6l-8 8"
-        stroke="var(--ink)"
+        stroke="var(--muted)"
         strokeWidth="2"
         strokeLinecap="round"
       />

@@ -16,6 +16,7 @@ export const countdown = {
 export const hero = {
   eyebrow: "Evento online · 5 dias · kit chega na sua casa",
   headline: "Pinte a primeira peça de porcelana da sua vida em 5 dias — mesmo sem saber desenhar um traço",
+  headlineHighlight: "mesmo sem saber desenhar um traço",
   subheadline:
     "Chega de salvar peça linda no Pinterest e nunca fazer a sua. Decalque guiado, kit completo na porta de casa e queima no forno que você já tem.",
   velocityBullets: [

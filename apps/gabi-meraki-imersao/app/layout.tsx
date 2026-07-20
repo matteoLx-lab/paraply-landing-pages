@@ -1,20 +1,20 @@
 import type { Metadata } from "next";
-import { Montserrat, Ubuntu } from "next/font/google";
+import { Anton, Space_Grotesk } from "next/font/google";
 import Script from "next/script";
 import { META_PIXEL_ID } from "@/lib/content";
 import "./globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-inter",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-body-raw",
   subsets: ["latin"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
-const ubuntu = Ubuntu({
-  variable: "--font-fraunces",
+const anton = Anton({
+  variable: "--font-display-raw",
   subsets: ["latin"],
-  weight: ["500", "700"],
-  style: ["normal", "italic"],
+  weight: ["400"],
   display: "swap",
 });
 
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${montserrat.variable} ${ubuntu.variable} h-full antialiased`}
+      className={`${spaceGrotesk.variable} ${anton.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <Script id="meta-pixel" strategy="afterInteractive">
