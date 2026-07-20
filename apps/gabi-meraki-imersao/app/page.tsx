@@ -2,17 +2,20 @@ import {
   AboutSection,
   BenefitsSection,
   ChecklistSection,
+  DorMirrorSection,
   Footer,
   Header,
   Hero,
   HowItWorksSection,
   MaterialsSection,
   OvenSection,
-  PainPointsSection,
   PricingSection,
+  QualificationSection,
+  StatHighlightSection,
   SupportSection,
   TechniquesSection,
   TestimonialSection,
+  TransitionSection,
 } from "@/components/sections";
 
 export default function Home() {
@@ -21,15 +24,18 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <PainPointsSection />
+        <StatHighlightSection />
+        <DorMirrorSection />
+        <TransitionSection />
         <TechniquesSection />
         <OvenSection />
         <HowItWorksSection />
         <MaterialsSection />
         <ChecklistSection />
-        <PricingSection />
         <BenefitsSection />
+        <QualificationSection />
         <TestimonialSection />
+        <PricingSection />
         <AboutSection />
         <SupportSection />
       </main>

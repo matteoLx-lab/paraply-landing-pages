@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Montserrat, Ubuntu } from "next/font/google";
 import Script from "next/script";
 import { META_PIXEL_ID } from "@/lib/content";
 import "./globals.css";
 
-const inter = Inter({
+const montserrat = Montserrat({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const fraunces = Fraunces({
+const ubuntu = Ubuntu({
   variable: "--font-fraunces",
   subsets: ["latin"],
+  weight: ["500", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -30,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${ubuntu.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <Script id="meta-pixel" strategy="afterInteractive">

@@ -6,14 +6,32 @@ export function CheckIcon({ className = "" }: { className?: string }) {
       className={className}
       aria-hidden="true"
     >
-      <circle cx="10" cy="10" r="10" className="fill-accent/15" />
+      <rect x="1" y="1" width="18" height="18" rx="3" className="fill-accent" />
       <path
-        d="M6 10.5l2.5 2.5L14 7.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
+        d="M5.5 10.2l3 3L14.5 6.5"
+        stroke="var(--accent-foreground)"
+        strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className="text-accent"
+      />
+    </svg>
+  );
+}
+
+export function CrossIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      fill="none"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect x="1" y="1" width="18" height="18" rx="3" className="fill-ink/10" />
+      <path
+        d="M6 6l8 8M14 6l-8 8"
+        stroke="var(--ink)"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

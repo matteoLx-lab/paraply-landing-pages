@@ -2,31 +2,52 @@ export const CHECKOUT_URL = "https://clkdmg.site/pay/imersaoprimeiraporcelana";
 export const SUPPORT_URL = "https://lembrete.gabimeraki.com.br/suporte-imersao-primeira-porcelana";
 export const META_PIXEL_ID = "2007418282655049";
 
-export const CTA_PRIMARY = "Quero participar do evento";
+export const CTA_PRIMARY = "Garantir minha vaga + kit";
 export const CTA_SUPPORT = "Quero falar com o suporte";
 
-export const hero = {
-  eyebrow: "Evento online · 5 dias",
-  headline: "Pinte sua primeira peça de porcelana em casa e finalize no forno comum",
-  subheadline:
-    "Um passo a passo guiado do zero — sem precisar saber desenhar, com todo o material enviado pra sua casa.",
+export const urgencyBar = {
+  text: "70% DOS INGRESSOS JÁ FORAM VENDIDOS",
 };
 
-export const painPoints = {
-  title: "Não é talento. É método.",
-  intro:
-    "Você não precisa nascer com jeito pra pintura. Precisa seguir um caminho guiado, testado com milhares de alunas.",
-  bullets: [
-    "Nunca pintou nada na vida",
-    "Não sabe desenhar",
-    "Tem medo de errar a peça",
-    "Só tem forno comum em casa",
+export const countdown = {
+  label: "Nova turma começa segunda-feira, 7h (horário de Brasília)",
+};
+
+export const hero = {
+  eyebrow: "Evento online · 5 dias · kit chega na sua casa",
+  headline: "Pinte a primeira peça de porcelana da sua vida em 5 dias — mesmo sem saber desenhar um traço",
+  subheadline:
+    "Chega de salvar peça linda no Pinterest e nunca fazer a sua. Decalque guiado, kit completo na porta de casa e queima no forno que você já tem.",
+  velocityBullets: [
+    "Sem saber desenhar",
+    "Sem forno especial — funciona até na air fryer",
+    "Kit completo com frete grátis pra sua casa",
+  ],
+  photoCaption: "Alunas da Imersão pintando a primeira peça, ao vivo",
+};
+
+export const statHighlight = {
+  number: "5.000+",
+  label: "alunas já pintaram a primeira peça sem saber desenhar antes",
+};
+
+export const dorMirror = {
+  title: "Eu sei exatamente o que você está pensando agora",
+  bubbles: [
+    "Já salvei um monte de peça linda no Pinterest e nunca fiz a minha.",
+    "Tenho medo de estragar a peça e jogar R$148 fora.",
+    "Acho que só quem 'tem mão boa' consegue pintar bonito.",
+    "Já pensei em comprar material sozinha e travei sem saber nem por onde começar.",
   ],
 };
 
+export const transition = {
+  text: "A verdade: ninguém nasce sabendo pintar porcelana. Existe um jeito de fazer isso sem depender de talento nenhum — e você aprende em 5 dias.",
+};
+
 export const techniques = {
-  title: "E se o desenho não depender da sua mão?",
-  intro: "O resultado vem do método, não do talento. Você vai aplicar o desenho com três técnicas guiadas:",
+  title: "O desenho não depende da sua mão. Depende do método.",
+  intro: "Você vai aplicar o desenho com três técnicas 100% guiadas, sem improviso:",
   items: [
     { name: "Decalque", description: "Transfere o desenho pronto direto pra peça." },
     { name: "Contorno guiado", description: "Segue um traço de referência, sem improviso." },
@@ -60,7 +81,7 @@ export const howItWorks = {
 };
 
 export const materials = {
-  title: "O kit já vem pronto — inclusive o frete",
+  title: "O kit chega pronto — literalmente tudo, inclusive o frete",
   intro:
     "Sem se preocupar em saber o que comprar ou errar o material. Está tudo incluso, com frete grátis pro Brasil.",
   items: [
@@ -85,14 +106,6 @@ export const checklist = {
   ],
 };
 
-export const pricing = {
-  title: "Investimento",
-  price: "R$ 148,00",
-  installment: "ou 12x de R$ 14,78",
-  scarcityLabel: "70% dos ingressos vendidos",
-  note: "Já inclui todo o material e o frete — sem custo escondido.",
-};
-
 export const benefits = {
   title: "O que você vai conseguir depois do evento",
   items: [
@@ -106,16 +119,44 @@ export const benefits = {
   ],
 };
 
+export const qualification = {
+  title: "Pra quem é — e pra quem não é",
+  isFor: {
+    title: "É pra você se:",
+    items: [
+      "Nunca pintou nada na vida e quer começar sem gastar errado",
+      "Já tentou sozinha e travou sem saber por onde começar",
+      "Só tem forno comum ou air fryer em casa",
+      "Quer terminar o evento com uma peça pronta pra colocar na estante",
+    ],
+  },
+  isNotFor: {
+    title: "Não é pra você se:",
+    items: [
+      "Já é pintora profissional de porcelana",
+      "Não consegue reservar 5 dias pra assistir a aula",
+      "Não pretende usar o kit que chega em casa",
+    ],
+  },
+};
+
 export const testimonial = {
   quote:
     "Nunca imaginei que conseguiria pintar uma peça tão bonita na minha primeira tentativa. O passo a passo é tão guiado que dá pra seguir sem medo.",
   author: "Aluna da Imersão Primeira Porcelana",
 };
 
+export const pricing = {
+  title: "Investimento",
+  price: "R$ 148,00",
+  installment: "12x de R$ 14,78",
+  scarcityLabel: "70% dos ingressos vendidos",
+  note: "Já inclui todo o material e o frete. É menos do que você gastaria comprando material errado sozinha, sem saber o que precisa.",
+};
+
 export const about = {
   title: "Quem é a Gabi Meraki",
   bullets: [
-    "Aprendeu a pintar porcelana com a avó",
     "Hoje comanda um dos maiores ateliês de porcelana artesanal do Brasil",
     "Já ensinou mais de 5.000 alunas",
     "Especialista em transformar pintura em porcelana em fonte de renda",
