@@ -1,0 +1,11 @@
+{
+  "name": "paraply-landing-pages",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:gabi-meraki-imersao": "npm run dev --workspace=apps/gabi-meraki-imersao",
+    "build:gabi-meraki-imersao": "npm run build --workspace=apps/gabi-meraki-imersao"
+  }
+}
