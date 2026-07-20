@@ -39,11 +39,14 @@ function SectionShell({
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-10 border-b border-card-border bg-background/90 px-6 py-4 backdrop-blur">
-      <div className="mx-auto flex max-w-3xl items-center justify-between">
-        <span className="font-display text-lg">{footer.brand}</span>
+    <header className="sticky top-0 z-10 border-b border-card-border bg-background/90 px-4 py-3 backdrop-blur sm:px-6 sm:py-4">
+      <div className="mx-auto flex max-w-3xl items-center justify-between gap-3">
+        <span className="shrink-0 font-display text-base sm:text-lg">
+          {footer.brand}
+        </span>
         <CtaButton href={CHECKOUT_URL} variant="secondary">
-          {CTA_PRIMARY}
+          <span className="sm:hidden">Participar</span>
+          <span className="hidden sm:inline">{CTA_PRIMARY}</span>
         </CtaButton>
       </div>
     </header>

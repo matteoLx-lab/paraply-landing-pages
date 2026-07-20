@@ -10,7 +10,7 @@ export function CtaButton({
   variant?: "primary" | "secondary";
 }) {
   const base =
-    "inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-semibold tracking-wide transition-transform hover:-translate-y-0.5";
+    "inline-flex items-center justify-center rounded-full px-4 py-2.5 text-xs sm:px-8 sm:py-4 sm:text-sm font-semibold tracking-wide transition-transform hover:-translate-y-0.5 text-center";
   const styles =
     variant === "primary"
       ? "bg-accent text-accent-foreground shadow-lg shadow-accent/20"
