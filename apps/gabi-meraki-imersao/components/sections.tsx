@@ -20,7 +20,6 @@ import {
 } from "@/lib/content";
 import { CtaButton } from "./CtaButton";
 import { CheckIcon } from "./Icons";
-import { ImagePlaceholder } from "./ImagePlaceholder";
 
 function SectionShell({
   children,
@@ -271,10 +270,14 @@ export function AboutSection() {
   return (
     <SectionShell>
       <div className="grid gap-8 sm:grid-cols-2 sm:items-center">
-        <ImagePlaceholder
-          label="Foto da Gabi Meraki"
-          className="aspect-[4/5]"
-        />
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-card-border">
+          <Image
+            src="/images/gabi-historia.png"
+            alt="Gabi Meraki contando como começou a pintar porcelana com a avó"
+            fill
+            className="object-cover"
+          />
+        </div>
         <div>
           <h2 className="font-display text-3xl">{about.title}</h2>
           <ul className="mt-6 space-y-2 text-sm">
