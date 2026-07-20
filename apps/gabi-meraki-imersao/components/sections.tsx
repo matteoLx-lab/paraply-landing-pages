@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   CHECKOUT_URL,
   CTA_PRIMARY,
@@ -181,10 +182,14 @@ export function MaterialsSection() {
             ))}
           </ul>
         </div>
-        <ImagePlaceholder
-          label="Foto do kit de materiais (Drive Gabi Meraki)"
-          className="aspect-square"
-        />
+        <div className="relative aspect-square overflow-hidden rounded-2xl border border-card-border">
+          <Image
+            src="/images/kit-meraki.png"
+            alt="Kit de materiais Meraki entregue em casa"
+            fill
+            className="object-cover"
+          />
+        </div>
       </div>
     </SectionShell>
   );
@@ -244,11 +249,15 @@ export function BenefitsSection() {
 export function TestimonialSection() {
   return (
     <SectionShell tone="card">
-      <div className="grid gap-6 sm:grid-cols-[auto_1fr] sm:items-center">
-        <ImagePlaceholder
-          label="Foto da aluna"
-          className="mx-auto h-24 w-24 shrink-0 rounded-full sm:mx-0"
-        />
+      <div className="grid gap-6 sm:grid-cols-[1fr_1.2fr] sm:items-center">
+        <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-card-border">
+          <Image
+            src="/images/aula-ao-vivo.png"
+            alt="Alunas pintando porcelana ao vivo com orientação guiada"
+            fill
+            className="object-cover"
+          />
+        </div>
         <div>
           <p className="font-display text-xl italic">“{testimonial.quote}”</p>
           <p className="mt-3 text-sm text-muted">{testimonial.author}</p>

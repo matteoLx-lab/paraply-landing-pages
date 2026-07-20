@@ -1,5 +1,6 @@
-export const CHECKOUT_URL = "https://clkdmg.site/PLACEHOLDER";
-export const SUPPORT_URL = "https://wa.me/PLACEHOLDER";
+export const CHECKOUT_URL = "https://clkdmg.site/pay/imersaoprimeiraporcelana";
+export const SUPPORT_URL = "https://lembrete.gabimeraki.com.br/suporte-imersao-primeira-porcelana";
+export const META_PIXEL_ID = "2007418282655049";
 
 export const CTA_PRIMARY = "Quero participar do evento";
 export const CTA_SUPPORT = "Quero falar com o suporte";
