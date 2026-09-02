@@ -1,0 +1,309 @@
+Construa uma landing page do zero. Ela nao existe ainda neste projeto: apague qualquer arquivo anterior em public/meraki-2-0/ e comece limpo.
+
+REGRAS TECNICAS, LEIA ANTES DE TUDO
+
+- Entregue UM unico arquivo estatico em: public/meraki-2-0/clube.html
+- HTML e CSS puros, escritos a mao, dentro do proprio arquivo. Sem React, sem componente, sem Tailwind, sem biblioteca, sem framework, sem build.
+- Nao altere nenhum outro arquivo do projeto. Nao mexa em rotas, App.tsx, index.html da raiz, tema ou componentes existentes.
+- Nao adicione banner de cookies, header do projeto, footer do projeto, analytics proprio ou qualquer elemento que nao esteja descrito aqui.
+- Nao invente secao, nao invente texto, nao invente numero, nao invente depoimento. Se algo nao estiver escrito neste briefing, nao entra na pagina.
+- Reproduza os textos exatamente como estao aqui, com todos os acentos e a pontuacao. Nao reescreva, nao encurte, nao "melhore".
+- Proibido: emoji, gradiente, glassmorphism, sombra pesada, animacao de entrada, contador regressivo, selo de urgencia, icone decorativo do tipo seta ou raio.
+
+
+IDIOMA E DECLARACOES OBRIGATORIAS NO <head>
+
+<html lang="pt-BR">, <meta charset="utf-8">, <meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metodo Meraki 2.0</title>   (com acento correto: Método Meraki 2.0)
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="A nova versão do Método Meraki, para quem já pinta todo mês e quer ser paga por isso.">
+
+
+SISTEMA VISUAL
+
+Fontes, via Google Fonts:
+  Roboto Slab (400,600,700,800) para titulos
+  Roboto (400,500,700) para corpo de texto
+  Poppins (500,600,700) para rotulos, botoes e textos em caixa alta
+
+Cores, use apenas estas:
+  --creme      #FBF6EC   fundo geral da pagina, liso, sem textura e sem ornamento
+  --creme2     #F4ECDE   fundo das secoes alternadas
+  --branco     #FFFFFF   fundo de card, caixa e foto
+  --texto      #3E3E3E
+  --texto-forte #2B2B2B
+  --texto-fraco #8A8A8A
+  --magenta    #CF005F   botao principal e rotulos
+  --magenta-esc #A3004B  base do botao (sombra solida embaixo)
+  --verde      #1CB927   itens de lista positiva e botao da oferta
+  --verde-esc  #14633A   preco e selo de garantia
+  --vermelho   #FC0444   itens de lista negativa
+  --cobalto    #27467C   fundo da secao escura
+
+Regra de tema, obrigatoria: coloque color-scheme:only light no :root e no html, e um bloco
+@media (prefers-color-scheme:dark){html,body{background:#FBF6EC;color:#3E3E3E}}
+Sem isso o navegador inverte as cores e o creme vira cinza.
+
+Ritmo: largura maxima de conteudo 1120px, padding lateral 24px, secoes com padding vertical entre 44px e 80px. Secoes alternam fundo creme e creme2. Titulos com text-wrap:balance. Texto corrido com no maximo 58 caracteres por linha.
+
+Botao principal: fundo magenta, texto branco, Poppins 700, cantos de 6px, sombra solida de 4px na cor magenta escuro embaixo (sem blur), com uma linha menor embaixo do texto principal.
+
+Listas: item positivo comeca com um check verde desenhado em CSS (duas bordas giradas 45 graus), nao use emoji nem imagem. Item negativo comeca com um X vermelho tipografico.
+
+Fotos: cada foto fica dentro de uma moldura branca com 10px de respiro, canto de 8px e sombra suave. A foto da primeira dobra tem moldura branca um pouco maior e alinhamento vertical centralizado.
+
+
+IMAGENS
+
+Base das imagens, use exatamente esta string como prefixo:
+
+https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/
+
+Monte cada URL concatenando o prefixo acima com o nome do arquivo:
+
+  hero.jpg      Gabi pintando um vaso branco no ateliê
+  antes.jpg     duas bandejas lado a lado, uma branca e uma pintada
+  processo.jpg  sequência da Gabi pintando uma bandeja
+  gabi.png      Gabi com pincel, fundo recortado
+  peca.jpg      xícara e pires pintados
+  faixa.png     ornamento decorativo em azul cobalto
+
+Nao hospede as imagens no projeto, nao baixe, nao substitua por placeholder, nao gere imagem nova. Se alguma URL falhar, pare e me avise em vez de improvisar.
+
+
+ESTRUTURA DA PAGINA, NA ORDEM
+
+O link de compra e sempre este, em todos os botoes:
+https://clkdmg.site/pay/metodo-meraki-desconto-imersao-primeira-porcelana
+
+
+1. PRIMEIRA DOBRA
+Duas colunas: texto a esquerda, foto hero.jpg a direita em moldura branca centralizada verticalmente. Em telas menores que 880px vira uma coluna.
+
+H1 (duas linhas, quebra manual):
+Você já pinta todo mês.
+Falta ser paga para pintar.
+
+Paragrafo:
+No Clube você criou o hábito, tem peça nova toda vez e não pinta sozinha. Isso não é pouco: a maioria das pessoas nunca chega nesse ponto. O Método Meraki 2.0 é a nova versão do método, feita para o passo seguinte: criar a sua própria peça, saber quanto ela vale e vender.
+(as palavras "a maioria das pessoas nunca chega nesse ponto" e "Método Meraki 2.0" em negrito)
+
+Botao: QUERO VENDER O QUE EU PINTO
+Linha menor dentro do botao: Condição de assinante do Clube · 12x no cartão
+
+Abaixo do botao, texto pequeno e cinza:
+Mais de 4.000 alunas · Garantia incondicional de 30 dias
+
+
+2. ONDE VOCE ESTA AGORA (fundo creme2, centralizado)
+Ornamento faixa.png no topo, largura máxima 460px.
+Rótulo em magenta, caixa alta, espaçado: Onde você está agora
+H2: Você não é iniciante faz tempo. E mesmo assim tem coisa que ainda trava.
+
+Duas caixas brancas lado a lado.
+
+Caixa 1, borda superior verde de 5px, titulo ISSO O CLUBE JÁ TE DEU, lista com check verde:
+O hábito de pintar todo mês, sem depender de vontade
+Peça nova e tema novo sempre que abre
+Companhia de quem pinta junto com você
+Material, forno e mão que já não tremem
+
+Caixa 2, borda superior vermelha de 5px, titulo E É AQUI QUE COSTUMA PARAR, lista com X vermelho:
+Já recebeu pedido de alguém e não soube quanto cobrar
+Tem peça acumulada em casa e nenhuma vendida
+Você pinta o projeto do mês, mas na hora de criar do zero não sabe por onde começar
+Quer fazer uma peça fora do tema e trava na composição
+Fotografa, não fica parecido com o que você vê, e desiste de postar
+
+Abaixo das duas caixas:
+Nada disso é falta de talento nem de dedicação. Você já provou as duas coisas. É que pintar bem e ser paga para pintar são habilidades diferentes, e a segunda ninguém te ensinou ainda.
+
+
+3. A DIFERENCA ENTRE OS DOIS (fundo creme)
+Duas colunas: texto a esquerda, foto antes.jpg a direita.
+Rótulo: A diferença entre os dois
+H2: O Clube te mantém pintando. O 2.0 te faz vender.
+Paragrafo 1: São coisas diferentes, e uma não substitui a outra. O Clube é ritmo e companhia: todo mês tem projeto novo e alguém pintando junto. Ele existe para você não parar.
+Paragrafo 2: O Meraki 2.0 é a base inteira, do começo ao fim, mais a parte que ninguém ensina: quanto cobrar, como fotografar e como transformar elogio em encomenda paga.
+(o trecho "quanto cobrar, como fotografar e como transformar elogio em encomenda paga" em negrito)
+Paragrafo 3: Quem faz os dois usa o 2.0 para aprender e vender, e o Clube para praticar.
+Legenda embaixo da foto: Olhar uma peça branca e já saber o que fazer com ela é o que a base técnica constrói.
+
+
+4. O QUE MUDA NO 2.0 (fundo creme2, centralizado)
+Ornamento faixa.png no topo.
+Rótulo: O que muda no 2.0
+H2: A mesma base de pintura, reorganizada em torno de quem quer vender.
+Quatro cards brancos em grade.
+
+Card 01, numero grande em magenta, titulo Pintar com constância:
+A base inteira, do básico ao avançado: composição, traço, cor, ouro e queima. É o que te tira da dependência do projeto pronto e faz a peça ser repetível.
+
+Card 02, titulo Precificar e vender:
+Quanto cobrar sem trabalhar de graça, como fotografar a peça, o que oferecer primeiro e como transformar elogio em encomenda paga.
+
+Card 03, titulo Produzir e entregar:
+Montar o ateliê em casa, organizar prazo e produção, embalar e entregar sem quebrar. É o que separa uma venda solta de uma cliente que volta.
+
+Card 4, sinal de mais no lugar do numero, na cor cobalto #27467C, fundo levemente bege #F7EFE1, titulo Sem trocar o que já funciona:
+Você continua no Clube normalmente. O 2.0 entra por baixo, como base, não no lugar dele.
+
+
+5. DO JEITO QUE VOCE JA CONHECE (fundo creme)
+Duas colunas invertidas: foto processo.jpg a esquerda, texto a direita.
+Rótulo: Do jeito que você já conhece
+H2: A mesma didática que você acompanha todo mês, agora do começo ao fim e com preço no meio.
+Paragrafo 1: Cada peça é mostrada inteira: a escolha do desenho, o traço, a cor, o ouro e a queima. A diferença é que aqui você entende o porquê de cada decisão, e não só o passo a passo daquele projeto.
+Paragrafo 2: E, ao lado da técnica, o que o 2.0 trouxe para o centro: quanto cobrar, como mostrar e como fechar a encomenda.
+Lista com check verde:
+Mais de 80 aulas, do básico ao avançado
+Time de suporte para tirar dúvida de execução
+Grupo das alunas com 1,5 mil pessoas pintando junto
+
+
+6. DEPOIMENTOS (fundo creme2, centralizado)
+Ornamento faixa.png no topo.
+Rótulo: Quem já fez esse caminho
+H2: Mais de 4.000 alunas, e boa parte delas hoje é paga pelo que pinta.
+Seis cards brancos, cada um com cinco estrelas em amarelo (caractere ★, cor #F5A623), o texto e a assinatura "Aluna do Método Meraki" em caixa alta, pequena e cinza.
+
+1. Nunca soube desenhar, nem um coração eu conseguia fazer. Mas vi que não precisava disso. Hoje, minha caneca com Nossa Senhora virou nosso produto mais vendido e nossa renda principal.
+2. Entrei no curso sem dinheiro e sem material. Com uma caneca usada, fiz meu primeiro kit, vendi e não parei mais. Hoje, a porcelana é minha renda e gratidão diária.
+3. Na segunda semana após entrar no curso, faturei três vezes o valor do investimento com uma joia do dia para uma debutante. Simplesmente incrível!
+4. Sem renda, com uma filha pequena, comecei brincando com tinta guache. Hoje, vendo porcelanas, já faturei R$ 15 mil de casa e até dei entrevista pra TV. O curso da Gabi mudou minha vida.
+5. Comecei presenteando amigos, e logo vieram as encomendas. O que era hobby virou uma atividade apaixonante e cheia de significado.
+6. Após me aposentar, me sentia triste e sem rumo. A pintura em porcelana virou minha terapia remunerada. Hoje me sinto viva, realizada e com uma nova motivação todos os dias.
+
+Abaixo, texto pequeno e cinza:
+Depoimentos reais da página oficial. Antes de publicar, trocar a assinatura genérica por nome e foto de cada aluna. Se houver depoimento de assinante do Clube que fez o Método, é o mais forte para esta página.
+
+
+ATENCAO: esta pagina NAO tem a secao do grupo de alunas. Nao crie.
+
+
+7. QUEM ENSINA (fundo cobalto #27467C, texto branco)
+Duas colunas invertidas: imagem gabi.png a esquerda, sem moldura e sem sombra, largura máxima 420px. Texto a direita.
+Rótulo em azul claro #9DBBEA: Quem ensina
+H2 branco: Gabi Meraki e o maior ateliê de pintura em porcelana artesanal do Brasil.
+Paragrafo 1: Mais de 4.000 alunas já aprenderam a pintar porcelana em casa com ela, de todas as idades, do básico ao avançado. O Método Meraki 2.0 é a nova versão do curso mais completo de pintura em porcelana do Brasil, refeita em torno de quem quer vender o que pinta.
+Paragrafo 2: É a mesma pessoa que você acompanha todo mês no Clube, com o conteúdo que não cabe em um projeto mensal e com a parte comercial dentro do curso.
+Os paragrafos em cinza claro #D3DEEE.
+
+
+8. GARANTIA (fundo branco levemente transparente, centralizado)
+Rótulo: Risco zero
+H2: Trinta dias para entrar, assistir e decidir com calma.
+Caixa branca com um selo redondo verde escuro a esquerda, com o numero 30 grande e a palavra DIAS embaixo em caixa alta.
+Texto: Você entra, assiste às aulas, conversa com o time e pinta as primeiras peças com a base nova. Se achar que não era para você, devolvemos o valor integral. Garantia incondicional, sem justificativa.
+Segundo texto: E sua assinatura do Clube continua intacta, independente da sua decisão aqui.
+
+
+9. OFERTA (fundo creme2, centralizado)
+Ornamento faixa.png no topo.
+Rótulo: Sua condição
+H2: O desconto não é promoção. É de quem já faz parte da casa.
+Caixa branca de no máximo 540px, cantos de 12px, com uma tarja magenta no topo escrita em caixa alta: Condição para assinantes do Clube
+Dentro:
+  De R$ 1.497,00 por        (o valor riscado)
+  12x R$ 99,53              (numero enorme em verde escuro)
+  ou R$ 997,00 à vista no PIX
+  Botao verde: QUERO ENTRAR NO MERAKI 2.0 / linha menor: Acesso liberado na hora
+  Lista com check verde:
+    Mais de 80 aulas, do básico ao avançado
+    Time de suporte para quando a peça não sai como esperado
+    Módulo comercial: preço, foto, oferta e encomenda
+    Quatro bônus inclusos, sem custo adicional
+    Sua assinatura do Clube continua, sem alteração
+    Garantia incondicional de 30 dias
+Abaixo da caixa, texto pequeno e cinza:
+Pendente com a Gabi: link de checkout próprio para assinante do Clube (o atual se chama "desconto imersão primeira porcelana"), o preço do 2.0 e o nome exato do módulo comercial listado acima.
+
+
+10. NAO E PARA QUALQUER PESSOA (fundo creme, centralizado)
+Rótulo cinza: Antes de entrar
+H2: Isto aqui não é para qualquer pessoa.
+Tres caixas brancas.
+
+NÃO É PARA QUEM SÓ QUER PASSATEMPO
+Se pintar uma peça por mês com o projeto pronto já te faz feliz, o Clube sozinho resolve. O 2.0 é para quem quer criar sem depender de tema e ser paga pelo que faz.
+
+NÃO É PROMESSA DE RENDA RÁPIDA
+O 2.0 te dá o caminho de precificar, mostrar e vender. Quanto você vai faturar depende de quantas peças você pinta e de quantas vezes você oferece. Não existe número garantido.
+
+NÃO É SUBSTITUTO DO CLUBE
+São coisas diferentes. Se você entrar esperando que o 2.0 traga projeto novo todo mês, vai se frustrar. Ele é base e caminho comercial, não calendário.
+
+
+11. DUVIDAS (fundo creme2, centralizado)
+Rótulo cinza: Dúvidas
+H2: Perguntas de quem já é do Clube
+Seis blocos de pergunta e resposta em <details>/<summary>, fundo branco, com um sinal de mais em magenta a direita que vira um traço quando aberto.
+
+O que é o Meraki 2.0?
+É a nova versão do Método Meraki. A base técnica continua inteira, do básico ao avançado. O que mudou foi o eixo: o curso foi reorganizado para quem quer vender o que pinta, com preço, fotografia, oferta e encomenda tratados como parte do método, e não como assunto solto no fim.
+
+Qual a diferença entre o Clube e o 2.0?
+O Clube é ritmo: projeto novo todo mês e companhia para você não parar de pintar. O 2.0 é a base técnica completa, do básico ao avançado, mais precificação, fotografia e venda. Um te mantém pintando, o outro te faz cobrar por isso.
+
+Preciso cancelar o Clube para entrar?
+Não. Sua assinatura continua exatamente como está. A maioria das alunas que faz os dois usa o 2.0 para aprender e vender, e o Clube para praticar o que aprendeu.
+
+O conteúdo repete o que já vi nos projetos do Clube?
+Não. Nos projetos do Clube você acompanha uma peça específica do começo ao fim. No Método você aprende o porquê de cada decisão, o que permite montar a sua própria peça em vez de reproduzir a que foi proposta.
+
+Já pinto há um tempo. Vou achar básico demais?
+Os primeiros módulos vão ser rápidos para você, e isso é bom: servem para fechar buracos de base que quase toda autodidata tem. O conteúdo avançado e a parte comercial são onde você vai passar a maior parte do tempo.
+
+Por quanto tempo tenho acesso?
+Esta informação precisa ser confirmada com a Gabi antes de a página ir ao ar. A página atual não deixa claro, e prometer errado aqui vira reembolso depois.
+
+
+12. FECHAMENTO (fundo creme, centralizado)
+Foto peca.jpg em moldura branca, largura máxima 420px.
+H2: Você já provou que não para. Agora é ser paga pelo que você faz.
+Texto: A base completa, mais a parte comercial que o Clube não tem como cobrir.
+Botao magenta: ENTRAR NO MERAKI 2.0 / linha menor: 12x R$ 99,53 · garantia de 30 dias
+
+
+13. RODAPE (fundo cinza escuro #2B2B2B, texto claro)
+Método Meraki 2.0 · Gabi Meraki
+Página destinada a assinantes do Clube da Porcelana.
+Os produtos e serviços vendidos neste site não devem ser interpretados como promessa ou garantia de resultados. Seu nível de sucesso depende de dedicação, aplicação e fatores individuais.
+
+
+BLOCO DE RASTREIO, OBRIGATORIO, NO FIM DO <body>
+
+Copie este bloco exatamente como esta, logo antes de </body>. Ele carrega o pixel do Meta e repassa a query string da URL para o link do checkout. Sem ele a campanha roda cega. Nao reescreva, nao mova para o <head>, nao troque por biblioteca de analytics.
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2007418282655049');fbq('track','PageView');
+(function(){
+  var links=[].slice.call(document.querySelectorAll('a[href*="clkdmg.site"]'));
+  var q=location.search.replace(/^\?/,'');
+  links.forEach(function(a){
+    if(q){a.href+=(a.href.indexOf('?')<0?'?':'&')+q;}
+    a.addEventListener('click',function(){try{fbq('track','InitiateCheckout');}catch(e){}});
+  });
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none"
+ src="https://www.facebook.com/tr?id=2007418282655049&ev=PageView&noscript=1" alt=""></noscript>
+
+
+RESPONSIVIDADE
+
+Abaixo de 880px as secoes de duas colunas viram uma coluna e a foto da primeira dobra fica com no maximo 520px, centralizada. Abaixo de 600px o corpo do texto cai para 16,5px e a caixa da garantia empilha centralizada. Nenhuma parte da pagina pode rolar horizontalmente: tabela, bloco largo ou imagem grande precisam caber ou rolar dentro do proprio container.
+
+
+QUANDO TERMINAR
+
+Me responda em texto, sem alterar mais nada:
+1. O tamanho final do arquivo em bytes.
+2. Quantas tags <img> a pagina tem. O esperado e 10: nove de conteudo (faixa.png aparece quatro vezes, as outras cinco uma vez cada) mais a do noscript do pixel. Confirme que todas as nove de conteudo comecam com o prefixo do cdn.jsdelivr.net indicado acima.
+3. Se a tag <script> do rastreio esta presente no fim do <body>, com o id 2007418282655049 aparecendo duas vezes na pagina.
+4. A URL publica onde a pagina abre sem login.
