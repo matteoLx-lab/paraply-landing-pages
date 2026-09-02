@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A nova versão do Método Meraki, para quem quer vender o que pinta.">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="Método Meraki 2.0">
+<meta property="og:description" content="A nova versão do Método Meraki, para quem quer vender o que pinta.">
+<meta property="og:type" content="website">
+<title>Método Meraki 2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700;800&family=Roboto:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap">
+
+<style>
+:root{
+  color-scheme:only light;
+  --branco:#FFFFFF; --creme:#FBF6EC; --creme2:#F3EAD9; --cinza-md:#E4D7C1;
+  --texto:#3E3E3E; --texto-forte:#2B2B2B; --texto-fraco:#8A8A8A;
+  --magenta:#CF005F; --magenta-esc:#A3004B;
+  --verde:#1CB927; --verde-esc:#14633A; --vermelho:#FC0444;
+  --azul:#5A72AF;
+}
+*{box-sizing:border-box}
+html{background:#FBF6EC;color-scheme:only light}
+@media (prefers-color-scheme:dark){html,body{background:#FBF6EC;color:#3E3E3E}}
+body{background:var(--creme);color:var(--texto);
+  font-family:Roboto,"Segoe UI",system-ui,sans-serif;font-size:17px;line-height:1.62;margin:0;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Roboto Slab",Georgia,serif;margin:0;text-wrap:balance;color:var(--texto-forte)}
+h1{font-size:clamp(1.95rem,4.4vw,3.05rem);line-height:1.14;font-weight:800}
+h2{font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.2;font-weight:700}
+h3{font-size:1.14rem;font-weight:700;line-height:1.32}
+h4{font-family:Poppins,sans-serif;font-size:.95rem;font-weight:700;letter-spacing:.02em}
+p{margin:0} ul{margin:0;padding:0;list-style:none} img{max-width:100%;display:block}
+section,footer{position:relative;z-index:1}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.centro{text-align:center;display:flex;flex-direction:column;align-items:center}
+section{padding:clamp(44px,6vw,80px) 0}
+.br{background:transparent}
+.cz{background:#F4ECDE;
+  border-top:1px solid rgba(122,96,60,.15);border-bottom:1px solid rgba(122,96,60,.15)}
+.czcl{background:rgba(255,255,255,.72)}
+.verde{background:#27467C;color:#fff}
+.verde h2,.verde h3{color:#fff} .verde p{color:#D3DEEE}
+.olho{font-family:Poppins,sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--magenta)}
+.olho.g{color:var(--verde)} .olho.c{color:var(--texto-fraco)}
+.sub{font-size:clamp(1rem,1.7vw,1.16rem);color:var(--texto);max-width:58ch;line-height:1.6}
+.sub b{color:var(--texto-forte);font-weight:700}
+.mini{font-size:.83rem;color:var(--texto-fraco);line-height:1.5}
+
+/* ornamento cobalto da marca */
+.orn{width:min(100%,460px);margin:0 auto 14px;opacity:.9}
+
+/* botao magenta da marca */
+.btn{display:inline-flex;flex-direction:column;align-items:center;gap:4px;
+  background:var(--magenta);color:#fff;text-decoration:none;
+  font-family:Poppins,sans-serif;font-weight:700;font-size:1.06rem;
+  padding:18px 40px;border-radius:6px;text-align:center;width:fit-content;
+  box-shadow:0 4px 0 var(--magenta-esc),0 14px 30px -14px rgba(207,0,95,.8);
+  transition:transform .1s ease,box-shadow .1s ease}
+.btn small{font-family:Roboto,sans-serif;font-weight:400;font-size:.78rem;opacity:.92}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--magenta-esc),0 18px 34px -14px rgba(207,0,95,.85)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--magenta-esc)}
+.btn.g{background:var(--verde);box-shadow:0 4px 0 #128A1B,0 14px 30px -14px rgba(28,185,39,.8)}
+.btn.g:hover{box-shadow:0 6px 0 #128A1B,0 18px 34px -14px rgba(28,185,39,.85)}
+
+/* hero */
+.hero{background:transparent;padding:clamp(26px,3.5vw,44px) 0 0;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(18px,3vw,44px);align-items:center}
+.hero .col{display:flex;flex-direction:column;gap:18px;padding-bottom:clamp(30px,4vw,52px)}
+.herofoto{margin:0;align-self:center;background:#fff;padding:clamp(10px,1.15vw,16px);border:1px solid rgba(122,96,60,.24);border-radius:3px;box-shadow:0 12px 30px -24px rgba(88,66,38,.5)}
+.herofoto img{width:100%;border:1px solid rgba(122,96,60,.14)}
+
+/* lista com check verde */
+.check li{padding-left:32px;position:relative;margin-bottom:13px;line-height:1.5}
+.check li:last-child{margin-bottom:0}
+.check li::before{content:"";position:absolute;left:3px;top:.34em;width:14px;height:8px;
+  border-left:3px solid var(--verde);border-bottom:3px solid var(--verde);transform:rotate(-45deg)}
+.check li b{color:var(--texto-forte)}
+/* lista com x vermelho */
+.xis li{padding-left:32px;position:relative;margin-bottom:13px;line-height:1.5;color:var(--texto)}
+.xis li:last-child{margin-bottom:0}
+.xis li::before{content:"\00D7";position:absolute;left:5px;top:-.06em;color:var(--vermelho);
+  font-size:1.35rem;font-weight:700;line-height:1.35}
+
+/* duas colunas antes/depois */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px;margin-top:22px;width:100%}
+.cx{background:var(--branco);border-radius:8px;padding:clamp(20px,2.4vw,28px);text-align:left;
+  box-shadow:0 2px 10px rgba(0,0,0,.07)}
+.cx.marc{border-top:5px solid var(--verde)}
+.cx.marc2{border-top:5px solid var(--vermelho)}
+.cx h4{margin-bottom:14px;color:var(--texto-forte)}
+
+/* foto emoldurada */
+.foto{background:#fff;padding:10px;border-radius:8px;box-shadow:0 3px 16px rgba(0,0,0,.13);margin:0}
+.foto img{border-radius:4px;width:100%}
+.legenda{font-size:.79rem;color:var(--texto-fraco);margin-top:10px;line-height:1.45}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.6vw,50px);align-items:center;width:100%;text-align:left}
+.split .txt{display:flex;flex-direction:column;gap:16px}
+.split.rev .foto{order:-1}
+
+/* cards de pilar */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(228px,1fr));gap:16px;margin-top:24px;width:100%}
+.card{background:var(--branco);border-radius:8px;padding:24px 22px;text-align:left;
+  box-shadow:0 2px 10px rgba(0,0,0,.07);display:flex;flex-direction:column;gap:9px}
+.card .num{font-family:"Roboto Slab",serif;font-size:1.9rem;font-weight:800;color:var(--magenta);line-height:1}
+.card p{font-size:.95rem;line-height:1.55}
+
+/* depoimentos */
+.depos{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:24px;width:100%;text-align:left}
+.depo{background:var(--branco);border-radius:8px;padding:24px 22px;box-shadow:0 2px 10px rgba(0,0,0,.07);
+  display:flex;flex-direction:column;gap:12px}
+.depo p{font-size:.96rem;line-height:1.6;color:var(--texto)}
+.depo .estrelas{color:#F5A623;letter-spacing:3px;font-size:1.02rem}
+.depo .nome{font-family:Poppins,sans-serif;font-size:.78rem;font-weight:700;color:var(--texto-fraco);
+  letter-spacing:.04em;text-transform:uppercase}
+
+/* oferta */
+.oferta{background:var(--branco);border-radius:12px;max-width:540px;width:100%;overflow:hidden;
+  box-shadow:0 6px 34px rgba(0,0,0,.17);text-align:center}
+.oferta .topo{background:var(--magenta);color:#fff;padding:15px 24px;
+  font-family:Poppins,sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.09em;text-transform:uppercase}
+.oferta .corpo{padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:14px;align-items:center}
+.oferta .de{color:var(--texto-fraco);font-size:1.02rem}
+.oferta .por{font-family:"Roboto Slab",serif;font-weight:800;font-size:clamp(2.3rem,5.4vw,3.3rem);
+  line-height:1;color:var(--verde-esc)}
+.oferta .por small{font-size:.34em;font-family:Roboto,sans-serif;font-weight:700;color:var(--texto)}
+.oferta .vista{font-size:.97rem;color:var(--texto)}
+.oferta ul{width:100%;text-align:left;border-top:1px solid #E8E8E8;padding-top:20px;margin-top:4px}
+.oferta li{font-size:.95rem}
+
+/* garantia */
+.gar{display:grid;grid-template-columns:minmax(0,108px) 1fr;gap:26px;align-items:center;max-width:760px;
+  background:var(--branco);border-radius:10px;padding:clamp(22px,2.6vw,30px);text-align:left;
+  box-shadow:0 2px 12px rgba(0,0,0,.09)}
+.selo{width:108px;height:108px;border-radius:50%;background:var(--verde-esc);color:#fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;flex:0 0 auto}
+.selo b{font-family:"Roboto Slab",serif;font-size:2.4rem;line-height:.9;font-weight:800}
+.selo span{font-family:Poppins,sans-serif;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* faq */
+.faq{max-width:780px;width:100%;text-align:left}
+.faq details{background:var(--branco);border-radius:8px;margin-bottom:11px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);overflow:hidden}
+.faq summary{cursor:pointer;font-family:Poppins,sans-serif;font-weight:600;font-size:1rem;
+  padding:17px 22px;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;
+  color:var(--texto-forte)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--magenta);font-size:1.5rem;line-height:1;flex:0 0 auto;font-weight:400}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 22px 19px;color:var(--texto);font-size:.96rem}
+
+footer{background:var(--texto-forte);color:#A8A8A8;padding:36px 0;font-size:.82rem}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+footer strong{color:#fff}
+
+:focus-visible{outline:3px solid var(--magenta);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:880px){
+  .hero .grid,.split{grid-template-columns:1fr}
+  .split.rev .foto{order:0}
+  .herofoto{max-width:520px;margin:0 auto}
+}
+@media (max-width:600px){
+  .gar{grid-template-columns:1fr;justify-items:center;text-align:center;gap:16px}
+  body{font-size:16.5px}
+}
+</style>
+</head>
+<body>
+<section class="hero">
+  <div class="wrap grid">
+    <div class="col">
+      <h1>Você já pintou a primeira.<br>Agora é hora de ser paga por elas.</h1>
+      <p class="sub">Na Imersão você descobriu a única coisa que importava saber: <b>que você consegue</b>. Escolheu a peça, pintou sem saber desenhar e queimou no forno que já tinha em casa. O <b>Método Meraki 2.0</b> é a nova versão do método, reorganizada em torno de uma pergunta só: como transformar o que você pinta em encomenda paga.</p>
+      <a class="btn" href="https://clkdmg.site/pay/metodo-meraki-desconto-imersao-primeira-porcelana">
+        QUERO VENDER O QUE EU PINTO
+        <small>Condição de quem fez a Imersão · 12x no cartão</small>
+      </a>
+      <p class="mini">Mais de 4.000 alunas · Garantia incondicional de 30 dias</p>
+    </div>
+    <figure class="herofoto"><img src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/hero.jpg" alt="Gabi Meraki pintando um vaso de porcelana branco em seu ateliê, cercada por peças pintadas à mão"></figure>
+  </div>
+</section>
+
+<section class="cz centro">
+  <div class="wrap centro">
+    <img class="orn" src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/faixa.png" alt="">
+    <span class="olho">Onde você está agora</span>
+    <h2 style="margin-top:10px;max-width:26ch">A Imersão te deu a primeira peça. Ela não tinha tempo para te ensinar a cobrar por ela.</h2>
+    <div class="duo">
+      <div class="cx marc">
+        <h4>ISSO VOCÊ JÁ CONQUISTOU</h4>
+        <ul class="check">
+          <li>Pintou uma peça inteira, do começo ao fim</li>
+          <li>Descobriu que <b>não precisa saber desenhar</b></li>
+          <li>Queimou no forno de casa e deu certo</li>
+          <li>Sabe que consegue fazer de novo</li>
+        </ul>
+      </div>
+      <div class="cx marc2">
+        <h4>E É AQUI QUE COSTUMA PARAR</h4>
+        <ul class="xis">
+          <li>Alguém elogiou, perguntou o preço, e você não soube o que responder</li>
+          <li>Tem peça pronta em casa e nenhuma vendida</li>
+          <li>A segunda peça não sai igual à primeira, e você não sabe o que mudou</li>
+          <li>Fotografa, não fica parecido com o que você vê, e desiste de postar</li>
+          <li>Tem vergonha de oferecer, porque acha que ainda não está bom o bastante</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sub" style="margin-top:28px">Cinco dias servem para tirar o medo de começar. Não servem para construir repertório, preço e uma forma de vender com constância. É outra etapa, e é exatamente a etapa que o 2.0 foi refeito para cobrir.</p>
+  </div>
+</section>
+
+<section class="br">
+  <div class="wrap split">
+    <div class="txt">
+      <span class="olho">A diferença que o repertório faz</span>
+      <h2 style="max-width:23ch">A peça branca custa quase nada. O que ela vale depois é o que você soube colocar nela.</h2>
+      <p>A bandeja da direita saiu da mesma loja que a da esquerda. A diferença não é talento nem material caro. É saber compor, onde parar, qual traço puxar em ouro e como fazer a flor parecer viva.</p>
+      <p>E é essa diferença que a cliente paga. <b>Mais de 80 aulas</b> existem para construir o repertório que faz a peça valer preço de encomenda, e não preço de peça de feira.</p>
+    </div>
+    <div>
+      <figure class="foto"><img src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/antes.jpg" alt="Duas bandejas de porcelana lado a lado: uma branca sem pintura e outra pintada à mão com flores rosas, laço e monograma em ouro"></figure>
+      <p class="legenda">Mesma bandeja, antes e depois. Ao lado, o material: decalque de flores e caneta de ouro.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cz centro">
+  <div class="wrap centro">
+    <img class="orn" src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/faixa.png" alt="">
+    <span class="olho">O que muda no 2.0</span>
+    <h2 style="margin-top:10px;max-width:26ch">A mesma base de pintura, reorganizada em torno de quem quer vender.</h2>
+    <div class="cards">
+      <div class="card"><span class="num">01</span><h3>Pintar com constância</h3><p>Técnica, traço, cor e queima. Encomenda exige repetir o resultado, não acertar uma vez. É o repertório que faz a décima peça ser melhor que a primeira.</p></div>
+      <div class="card"><span class="num">02</span><h3>Precificar e vender</h3><p>Quanto cobrar sem trabalhar de graça, como fotografar a peça, o que oferecer primeiro e como transformar elogio em encomenda paga.</p></div>
+      <div class="card"><span class="num">03</span><h3>Produzir e entregar</h3><p>Montar o ateliê em casa, organizar prazo e produção, embalar e entregar sem quebrar. É o que separa uma venda solta de uma cliente que volta.</p></div>
+      <div class="card" style="background:#F1FBF2;box-shadow:0 2px 10px rgba(28,185,39,.14)">
+        <span class="num" style="color:var(--verde)">+</span><h3>E continua valendo</h3>
+        <p>Não precisa saber desenhar, e a queima é no forno que você já tem: a gás, elétrico, Airfryer ou profissional.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="br">
+  <div class="wrap split rev">
+    <figure class="foto"><img src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/processo.jpg" alt="Sequência da Gabi pintando uma bandeja de porcelana, segurando a peça pronta e o resultado final"></figure>
+    <div class="txt">
+      <span class="olho">Passo a passo, do jeito que você já conhece</span>
+      <h2 style="max-width:24ch">A mesma didática da Imersão, agora com o tempo que a técnica e o preço pedem.</h2>
+      <p>Você acompanha cada peça do início ao fim: a escolha do desenho, o traço, a cor, o ouro e a queima. Sem pular etapa e sem pressupor que você já sabe.</p>
+      <p>E, ao lado da técnica, o que o 2.0 trouxe para o centro: quanto cobrar, como mostrar e como fechar a encomenda.</p>
+      <ul class="check">
+        <li><b>Mais de 80 aulas</b>, do básico ao avançado</li>
+        <li><b>Time de suporte</b> para tirar dúvida de execução</li>
+        <li><b>Grupo das alunas</b> com 1,5 mil pessoas pintando junto</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cz centro">
+  <div class="wrap centro">
+    <img class="orn" src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/faixa.png" alt="">
+    <span class="olho">Quem já fez esse caminho</span>
+    <h2 style="margin-top:10px;max-width:27ch">Mais de 4.000 alunas, e boa parte delas hoje é paga pelo que pinta.</h2>
+    <div class="depos">
+      <div class="depo"><span class="estrelas">★★★★★</span><p>“Nunca soube desenhar, nem um coração eu conseguia fazer. Mas vi que não precisava disso. Hoje, minha caneca com Nossa Senhora virou nosso produto mais vendido e nossa renda principal.”</p><span class="nome">Aluna do Método Meraki</span></div>
+      <div class="depo"><span class="estrelas">★★★★★</span><p>“Entrei no curso sem dinheiro e sem material. Com uma caneca usada, fiz meu primeiro kit, vendi e não parei mais. Hoje, a porcelana é minha renda e gratidão diária.”</p><span class="nome">Aluna do Método Meraki</span></div>
+      <div class="depo"><span class="estrelas">★★★★★</span><p>“Na segunda semana após entrar no curso, faturei três vezes o valor do investimento com uma joia do dia para uma debutante. Simplesmente incrível!”</p><span class="nome">Aluna do Método Meraki</span></div>
+      <div class="depo"><span class="estrelas">★★★★★</span><p>“Sem renda, com uma filha pequena, comecei brincando com tinta guache. Hoje, vendo porcelanas, já faturei R$ 15 mil de casa e até dei entrevista pra TV. O curso da Gabi mudou minha vida.”</p><span class="nome">Aluna do Método Meraki</span></div>
+      <div class="depo"><span class="estrelas">★★★★★</span><p>“Comecei presenteando amigos, e logo vieram as encomendas. O que era hobby virou uma atividade apaixonante e cheia de significado.”</p><span class="nome">Aluna do Método Meraki</span></div>
+      <div class="depo"><span class="estrelas">★★★★★</span><p>“Após me aposentar, me sentia triste e sem rumo. A pintura em porcelana virou minha terapia remunerada. Hoje me sinto viva, realizada e com uma nova motivação todos os dias.”</p><span class="nome">Aluna do Método Meraki</span></div>
+    </div>
+    <p class="mini" style="margin-top:20px;max-width:64ch">Depoimentos reais da página oficial. Antes de publicar, trocar a assinatura genérica por nome e foto de cada aluna.</p>
+  </div>
+</section>
+
+<section class="br">
+  <div class="wrap split">
+    <div class="txt">
+      <span class="olho">Você não pinta sozinha</span>
+      <h2 style="max-width:22ch">Um grupo com 1,5 mil alunas pintando junto com você.</h2>
+      <p>A parte mais difícil de pintar sozinha em casa não é a técnica. É não ter para quem perguntar quando a cor sai diferente depois da queima ou o traço borra.</p>
+      <p>No grupo das alunas, alguém já passou exatamente pelo problema que você está tendo agora.</p>
+    </div>
+    <div>
+      <figure class="foto"><img src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/grupo.jpg" alt="Grupo privado Alunas MM - Método Meraki, com 1,5 mil membros"></figure>
+      <p class="legenda">O grupo das alunas do Método Meraki, com 1,5 mil membros.</p>
+    </div>
+  </div>
+</section>
+
+<section class="verde">
+  <div class="wrap split rev">
+    <figure class="foto" style="background:transparent;box-shadow:none;padding:0">
+      <img src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/gabi.png" alt="Gabi Meraki segurando um pincel" style="max-width:420px;margin:0 auto">
+    </figure>
+    <div class="txt">
+      <span class="olho g" style="color:#9DBBEA">Quem ensina</span>
+      <h2 style="max-width:22ch">Gabi Meraki e o maior ateliê de pintura em porcelana artesanal do Brasil.</h2>
+      <p>Mais de 4.000 alunas já aprenderam a pintar porcelana em casa com ela, de todas as idades, do básico ao avançado. O <b>Método Meraki 2.0</b> é a nova versão do curso mais completo de pintura em porcelana do Brasil, refeita em torno de quem quer vender o que pinta.</p>
+      <p>É o mesmo jeito de ensinar que você viu na Imersão, agora com o tempo que a técnica realmente pede e com a parte comercial dentro do curso.</p>
+    </div>
+  </div>
+</section>
+
+<section class="czcl centro">
+  <div class="wrap centro">
+    <span class="olho">Risco zero</span>
+    <h2 style="margin-top:10px;max-width:26ch">Trinta dias para entrar, assistir e decidir com calma.</h2>
+    <div class="gar" style="margin-top:26px">
+      <div class="selo"><b>30</b><span>dias</span></div>
+      <div>
+        <p>Você entra, assiste às aulas, conversa com o time e pinta as primeiras peças. Se achar que não era para você, devolvemos o valor integral. <b>Garantia incondicional, sem justificativa.</b></p>
+        <p style="margin-top:10px">O risco da decisão fica com a Gabi, não com você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cz centro">
+  <div class="wrap centro">
+    <img class="orn" src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/faixa.png" alt="">
+    <span class="olho">Sua condição</span>
+    <h2 style="margin-top:10px;max-width:26ch">O desconto não é promoção. É de quem já pintou a primeira peça.</h2>
+    <div class="oferta" style="margin-top:26px">
+      <div class="topo">Condição Imersão Primeira Porcelana</div>
+      <div class="corpo">
+        <p class="de">De <s>R$ 1.497,00</s> por</p>
+        <p class="por">12x R$ 99<small>,53</small></p>
+        <p class="vista">ou <b>R$ 997,00</b> à vista no PIX</p>
+        <a class="btn g" href="https://clkdmg.site/pay/metodo-meraki-desconto-imersao-primeira-porcelana">
+          QUERO ENTRAR NO MERAKI 2.0
+          <small>Acesso liberado na hora</small>
+        </a>
+        <ul class="check">
+          <li><b>Mais de 80 aulas</b>, do básico ao avançado</li>
+          <li><b>Time de suporte</b> para quando a peça não sai como esperado</li>
+          <li><b>Grupo das alunas</b>, com 1,5 mil pintando junto</li>
+          <li><b>Módulo comercial</b>: preço, foto, oferta e encomenda</li>
+          <li><b>Quatro bônus</b> inclusos, sem custo adicional</li>
+          <li><b>Queima no forno que você já tem</b></li>
+          <li><b>Garantia incondicional</b> de 30 dias</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mini" style="margin-top:18px;max-width:58ch">Pendente com a Gabi: o preço do 2.0 (aqui está o valor mais pago nos últimos quatro meses) e o nome exato do módulo comercial listado acima.</p>
+  </div>
+</section>
+
+<section class="br centro">
+  <div class="wrap centro">
+    <span class="olho c">Antes de entrar</span>
+    <h2 style="margin-top:10px;max-width:22ch">Isto aqui não é para qualquer pessoa.</h2>
+    <div class="duo">
+      <div class="cx"><h4>NÃO É PARA QUEM NUNCA PINTOU</h4><p>O 2.0 começa de onde a Imersão parou. Se você ainda não pintou sua primeira peça, comece pela Imersão. Ela existe para isso e custa uma fração disto.</p></div>
+      <div class="cx"><h4>NÃO É PARA QUEM QUER RESULTADO SEM PINTAR</h4><p>Repertório se constrói repetindo. As alunas que chegam à renda são as que pintaram muitas peças, inclusive as que não ficaram boas.</p></div>
+      <div class="cx"><h4>NAO E PROMESSA DE RENDA RAPIDA</h4><p>O 2.0 te dá o caminho de precificar, mostrar e vender. Quanto você vai faturar depende de quantas peças você pinta e de quantas vezes você oferece. Não existe número garantido.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cz centro">
+  <div class="wrap centro">
+    <span class="olho c">Dúvidas</span>
+    <h2 style="margin-top:10px;margin-bottom:26px">Perguntas de quem fez a Imersão</h2>
+    <div class="faq">
+      <details><summary>O que é o Meraki 2.0?</summary>
+        <p>É a nova versão do Método Meraki. A base técnica continua inteira, do básico ao avançado. O que mudou foi o eixo: o curso foi reorganizado para quem quer vender o que pinta, com preço, fotografia, oferta e encomenda tratados como parte do método, e não como assunto solto no fim.</p></details>
+      <details><summary>Ele repete o que eu já vi na Imersão?</summary>
+        <p>Não. A Imersão te leva até a primeira peça finalizada. O 2.0 começa ali e cobre o que não cabia em cinco dias: técnica avançada, repertório de desenhos, composição, precificação, fotografia e venda.</p></details>
+      <details><summary>Preciso comprar material novo?</summary>
+        <p>Você vai repor tinta e peças conforme for pintando. O curso mostra exatamente o que comprar e onde, inclusive as alternativas mais baratas para quem está começando.</p></details>
+      <details><summary>Serve se eu só tenho Airfryer?</summary>
+        <p>Serve. A queima pode ser feita em forno a gás, elétrico, Airfryer ou profissional. É a mesma lógica que você já usou na sua primeira peça.</p></details>
+      <details><summary>Por quanto tempo tenho acesso?</summary>
+        <p>Esta informação precisa ser confirmada com a Gabi antes de a página ir ao ar. A página atual não deixa claro, e prometer errado aqui vira reembolso depois.</p></details>
+      <details><summary>E se eu entrar e não gostar?</summary>
+        <p>Você tem 30 dias de garantia incondicional. Pede o reembolso e recebe tudo de volta, sem precisar explicar o motivo.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="br centro">
+  <div class="wrap centro">
+    <figure class="foto" style="max-width:420px"><img src="https://cdn.jsdelivr.net/gh/matteoLx-lab/paraply-landing-pages@51299e176b681159fc9be1cae2181ccb55c94996/apps/meraki-2-0/img/peca.jpg" alt="Xícara e pires pintados à mão com flores em azul cobalto e detalhes em ouro"></figure>
+    <h2 style="margin-top:28px;max-width:24ch">Sua primeira peça já provou o que precisava provar.</h2>
+    <p class="sub" style="margin-top:12px">O que vem agora é repertório, preço e alguém pagando por isso.</p>
+    <a class="btn" style="margin-top:24px" href="https://clkdmg.site/pay/metodo-meraki-desconto-imersao-primeira-porcelana">
+      ENTRAR NO MERAKI 2.0
+      <small>12x R$ 99,53 · garantia de 30 dias</small>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Método Meraki 2.0</strong> · Gabi Meraki</p>
+    <p>Página destinada a quem participou da Imersão Primeira Porcelana.</p>
+    <p>Os produtos e serviços vendidos neste site não devem ser interpretados como promessa ou garantia de resultados. Seu nível de sucesso depende de dedicação, aplicação e fatores individuais.</p>
+  </div>
+</footer>
+
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2007418282655049');fbq('track','PageView');
+(function(){
+  var links=[].slice.call(document.querySelectorAll('a[href*="clkdmg.site"]'));
+  var q=location.search.replace(/^\?/,'');
+  links.forEach(function(a){
+    if(q){a.href+=(a.href.indexOf('?')<0?'?':'&')+q;}
+    a.addEventListener('click',function(){try{fbq('track','InitiateCheckout');}catch(e){}});
+  });
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none"
+ src="https://www.facebook.com/tr?id=2007418282655049&ev=PageView&noscript=1" alt=""></noscript>
+
+</body>
+</html>
