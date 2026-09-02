@@ -51,3 +51,13 @@ para `apps/meraki-2-0`, framework `Other`.
   `metodo-meraki-desconto-imersao-primeira-porcelana`, que soa errado para quem
   vem do Clube.
 - Nome e foto reais nos depoimentos, hoje assinados como "Aluna do Método Meraki".
+
+## Versao leve (para Lovable ou qualquer host que peca o HTML colado)
+
+`lovable/imersao.html` e `lovable/clube.html` sao as mesmas paginas com as
+imagens apontando para o CDN em vez de embutidas em base64: 28 KB cada, em vez
+de 1,3 MB. As imagens ficam em `img/` e sao servidas pelo jsDelivr, fixadas no
+commit `51299e176b681159fc9be1cae2181ccb55c94996`. Se alguma imagem mudar, o
+commit muda e as URLs dentro desses dois arquivos precisam ser regeradas.
+
+Prompts prontos para colar (instrucao + HTML) ficam em `paraply-lp/PROMPT-LOVABLE-*.txt`.
