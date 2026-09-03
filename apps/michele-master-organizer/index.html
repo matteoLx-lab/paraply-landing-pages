@@ -1,0 +1,332 @@
+<title>Master Organizer · Depois da Imersão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Karla:wght@400;500;600;700&display=swap">
+
+<style>
+:root{
+  --cream:#F7F6F1; --paper:#FFFFFF; --band:#EFEFE8;
+  --ink:#1F241E; --ink-2:#4C5348; --muted:#7A8175;
+  --forest:#14532B; --green:#0B7A31; --sage:#E3EADE;
+  --gold:#9C7C33; --rule:#DEDDD4; --rule-2:#C8C8BC;
+}
+*{box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);
+  font-family:Karla,"Segoe UI",system-ui,sans-serif;font-size:17.5px;line-height:1.62;margin:0;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Lora,Georgia,serif;margin:0;text-wrap:balance;font-weight:500;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.06}
+h2{font-size:clamp(1.55rem,3.1vw,2.35rem);line-height:1.14}
+h3{font-size:1.16rem;font-weight:600;line-height:1.3;font-family:Karla,sans-serif}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+strong{font-weight:700}
+em{font-style:italic}
+
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.prose{max-width:62ch;display:flex;flex-direction:column;gap:1.05em}
+.prose p{color:var(--ink-2)}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green)}
+.eyebrow.q{color:var(--muted)}
+section{padding:clamp(48px,7vw,96px) 0}
+.band{background:var(--band)}
+.paper{background:var(--paper)}
+.dark{background:var(--forest);color:#F2F6F0}
+.dark h2,.dark h3{color:#FFFFFF}
+.dark p{color:#D2E0D3}
+.dark .eyebrow{color:#8FD5A4}
+
+/* hero */
+.hero{padding-top:clamp(40px,6vw,74px);padding-bottom:clamp(40px,6vw,80px);
+  background:linear-gradient(180deg,#FFFFFF 0%,var(--cream) 100%);border-bottom:1px solid var(--rule)}
+.hero .inner{display:flex;flex-direction:column;gap:22px;max-width:860px}
+.hero .sub{font-size:clamp(1.05rem,1.9vw,1.28rem);color:var(--ink-2);max-width:56ch;line-height:1.5}
+.hero .sub b{color:var(--ink)}
+.selo{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--rule-2);
+  background:var(--paper);padding:8px 16px;border-radius:999px;width:fit-content;
+  font-size:.82rem;color:var(--ink-2);font-weight:500}
+.selo span{width:7px;height:7px;border-radius:50%;background:var(--green);flex:0 0 auto}
+
+/* cta */
+.cta{display:inline-flex;flex-direction:column;align-items:center;gap:5px;
+  background:var(--green);color:#fff;text-decoration:none;
+  padding:17px 34px;border-radius:6px;font-weight:700;font-size:1.06rem;
+  box-shadow:0 2px 0 #08551f,0 10px 26px -12px rgba(11,122,49,.7);
+  transition:transform .12s ease,box-shadow .12s ease;width:fit-content;text-align:center}
+.cta small{font-weight:500;font-size:.79rem;opacity:.9;letter-spacing:.01em}
+.cta:hover{transform:translateY(-1px);box-shadow:0 3px 0 #08551f,0 14px 30px -12px rgba(11,122,49,.75)}
+.cta:active{transform:translateY(1px);box-shadow:0 1px 0 #08551f}
+.cta.big{font-size:1.15rem;padding:20px 44px}
+.sob{font-size:.84rem;color:var(--muted);margin-top:11px}
+
+/* gap table */
+.gap{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;
+  background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:8px}
+.gap > div{background:var(--paper);padding:clamp(20px,2.4vw,30px);display:flex;flex-direction:column;gap:13px}
+.gap .tem{background:var(--sage)}
+.gap h3{font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.gap .tem h3{color:var(--forest)}
+.gap li{padding-left:22px;position:relative;color:var(--ink-2);line-height:1.5;margin-bottom:11px;font-size:.97rem}
+.gap li:last-child{margin-bottom:0}
+.gap li::before{content:"";position:absolute;left:0;top:.58em;width:9px;height:2px;background:var(--rule-2)}
+.gap .tem li::before{background:var(--green);height:9px;width:9px;border-radius:50%;top:.44em}
+
+/* modulos */
+.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px;margin-top:10px}
+.mod{background:var(--paper);border:1px solid var(--rule);border-radius:3px;padding:17px 19px;
+  display:flex;flex-direction:column;gap:5px}
+.mod .n{font-family:Lora,serif;font-size:.94rem;color:var(--gold);font-weight:600}
+.mod .t{font-weight:600;font-size:1rem;line-height:1.3}
+
+/* oferta */
+.oferta{background:var(--paper);border:1px solid var(--rule-2);border-radius:5px;
+  max-width:560px;overflow:hidden;box-shadow:0 1px 3px rgba(31,36,30,.06),0 18px 44px -26px rgba(31,36,30,.3)}
+.oferta .topo{background:var(--forest);color:#fff;padding:15px 26px;font-weight:700;font-size:.86rem;
+  letter-spacing:.1em;text-transform:uppercase;text-align:center}
+.oferta .corpo{padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
+.oferta .de{color:var(--muted);font-size:1rem}
+.oferta .de s{text-decoration-thickness:1.5px}
+.oferta .por{font-family:Lora,serif;font-size:clamp(2.4rem,5.5vw,3.4rem);line-height:1;color:var(--forest)}
+.oferta .por small{font-size:.36em;color:var(--ink-2);font-family:Karla,sans-serif;font-weight:600}
+.oferta .vista{font-size:.95rem;color:var(--ink-2)}
+.oferta .lista{width:100%;border-top:1px solid var(--rule);padding-top:18px;margin-top:2px;text-align:left}
+.oferta .lista li{padding-left:26px;position:relative;margin-bottom:10px;color:var(--ink-2);font-size:.96rem;line-height:1.45}
+.oferta .lista li::before{content:"";position:absolute;left:2px;top:.42em;width:12px;height:7px;
+  border-left:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(-45deg)}
+.oferta .lista li b{color:var(--ink)}
+
+/* garantia */
+.gar{display:grid;grid-template-columns:minmax(0,88px) 1fr;gap:24px;align-items:start;
+  background:var(--paper);border:1px solid var(--rule);border-radius:4px;padding:clamp(22px,2.6vw,32px);max-width:760px}
+.gar .n{font-family:Lora,serif;font-size:3.4rem;line-height:.85;color:var(--gold)}
+.gar .n span{display:block;font-family:Karla,sans-serif;font-size:.78rem;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:6px}
+
+/* nao é pra você */
+.nao{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:6px}
+.nao > div{border-left:3px solid var(--rule-2);padding:4px 0 4px 18px}
+.nao h3{margin-bottom:6px}
+.nao p{color:var(--ink-2);font-size:.96rem}
+
+/* prova pendente */
+.pend{border:1px dashed var(--rule-2);background:repeating-linear-gradient(45deg,transparent,transparent 9px,rgba(156,124,51,.05) 9px,rgba(156,124,51,.05) 18px);
+  padding:26px;border-radius:4px;max-width:720px;display:flex;flex-direction:column;gap:9px}
+.pend .lab{font-size:.74rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--gold)}
+.pend p{color:var(--ink-2);font-size:.95rem}
+
+/* faq */
+.faq{max-width:760px;border-top:1px solid var(--rule)}
+.faq details{border-bottom:1px solid var(--rule);padding:16px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:1.03rem;list-style:none;
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--green);font-size:1.3rem;line-height:1;flex:0 0 auto}
+.faq details[open] summary::after{content:"–"}
+.faq details p{color:var(--ink-2);margin-top:11px;font-size:.98rem;max-width:62ch}
+
+footer{background:var(--forest);color:#B9CDBC;padding:40px 0;font-size:.85rem}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+footer strong{color:#fff}
+
+:focus-visible{outline:2.5px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:620px){
+  .gar{grid-template-columns:1fr;gap:14px}
+  body{font-size:16.5px}
+}
+</style>
+
+<section class="hero">
+  <div class="wrap inner">
+    <div class="selo"><span></span>Página exclusiva para quem participou da Imersão Personal Organizer Lucrativa</div>
+    <h1>Você já sabe montar o orçamento.<br>Falta ter para quem mandar.</h1>
+    <p class="sub">Na Imersão você definiu o serviço, chegou no preço e montou a proposta. <b>Essa parte está resolvida.</b> O que trava agora é o que vem depois do primeiro orçamento enviado: encontrar cliente com constância, não sumir depois do primeiro serviço e chegar num faturamento que se repete todo mês.</p>
+    <a class="cta big" href="https://clkdmg.site/pay/masterdestravedescontopolucrativa">
+      Continuar para o Master Organizer
+      <small>Condição de quem fez a Imersão · 12x no cartão</small>
+    </a>
+    <p class="sob">Mais de 3.000 alunas · Garantia incondicional de 30 dias</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow">Onde você está agora</span>
+    <h2 style="margin-top:10px;max-width:20ch">A Imersão resolveu o começo. Ela não resolvia o depois.</h2>
+    <div class="gap">
+      <div class="tem">
+        <h3>Você já saiu com isso</h3>
+        <ul>
+          <li>O serviço que vai vender, definido</li>
+          <li>O preço, com margem, sem chutar</li>
+          <li>A proposta pronta para enviar</li>
+          <li>A certeza de que dá para cobrar por isso</li>
+        </ul>
+      </div>
+      <div>
+        <h3>E é aqui que costuma travar</h3>
+        <ul>
+          <li>O primeiro cliente veio de indicação — e o segundo não veio</li>
+          <li>Você entrega bem, mas o serviço acaba e a agenda esvazia</li>
+          <li>Não sabe o que fazer dentro da casa em que ordem, e cada trabalho leva o dobro do tempo</li>
+          <li>Cobra por serviço avulso e o mês nunca fecha igual</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prose" style="margin-top:30px">
+      <p>Nenhuma dessas coisas é falta de talento — é falta de sistema. Cinco dias dão para você começar. Não dão para montar uma operação que se sustenta.</p>
+    </div>
+  </div>
+</section>
+
+<section class="paper">
+  <div class="wrap">
+    <span class="eyebrow">O próximo passo</span>
+    <h2 style="margin-top:10px;max-width:22ch">O Master Organizer é a operação inteira, do primeiro contato à cliente que volta.</h2>
+    <div class="prose" style="margin-top:22px">
+      <p>É um programa de acompanhamento 100% online, com <strong>12 módulos e mais de 100 aulas</strong>, do básico ao avançado. Ele foi feito para um objetivo só: <strong>faturar de 5 a 10 mil reais por mês trabalhando como Personal Organizer</strong> — de forma que se repita, não uma vez.</p>
+      <p>A diferença para a Imersão é de escopo, não de assunto. Lá você montou uma proposta. Aqui você monta o método de atendimento, a precificação por pacote, a captação que não depende de indicação e o pós-serviço que traz a cliente de volta.</p>
+    </div>
+    <div class="mods">
+      <div class="mod"><span class="n">01 – 03</span><span class="t">Fundamento e método de organização</span></div>
+      <div class="mod"><span class="n">04 – 06</span><span class="t">Atendimento e execução dentro da casa</span></div>
+      <div class="mod"><span class="n">07 – 09</span><span class="t">Precificação por pacote e proposta comercial</span></div>
+      <div class="mod"><span class="n">10 – 12</span><span class="t">Captação, recorrência e crescimento</span></div>
+    </div>
+    <p class="sob" style="max-width:60ch">A divisão acima agrupa os 12 módulos por etapa da operação. A grade completa, módulo a módulo, está dentro da área de alunas.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow q">Prova</span>
+    <h2 style="margin-top:10px;max-width:24ch">Mais de 3.000 alunas já passaram por esse caminho.</h2>
+    <div class="pend" style="margin-top:24px">
+      <span class="lab">Espaço reservado — depoimento real pendente</span>
+      <p>Aqui entram três depoimentos de alunas que <strong>fizeram a Imersão antes de entrar no Master Organizer</strong> — que é a jornada exata de quem está lendo esta página. Nome, foto, tempo até o primeiro serviço pago e faturamento atual.</p>
+      <p>Deixei o bloco vazio de propósito: depoimento inventado é a coisa que mais destrói confiança numa página que fala com quem já é cliente. Precisa vir da Michele.</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow">O que está incluído</span>
+    <h2 style="margin-top:10px;max-width:20ch">Além do curso, os bônus que só quem entra agora leva.</h2>
+    <div class="gap" style="border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.16)">
+      <div style="background:#1B6034">
+        <h3 style="color:#8FD5A4">Bônus 01</h3>
+        <p style="color:#D2E0D3">Comunidade das alunas — o grupo onde as dúvidas de execução são resolvidas por quem já atendeu casos parecidos.</p>
+      </div>
+      <div style="background:#1B6034">
+        <h3 style="color:#8FD5A4">Bônus 02</h3>
+        <p style="color:#D2E0D3">Materiais de apoio e modelos prontos de contrato, proposta e checklist de atendimento.</p>
+      </div>
+      <div style="background:#1B6034">
+        <h3 style="color:#8FD5A4">Bônus 03</h3>
+        <p style="color:#D2E0D3">Acompanhamento em grupo com a Michele, para levar casos reais e sair com a próxima ação definida.</p>
+      </div>
+    </div>
+    <p style="color:#9DBBA2;font-size:.85rem;margin-top:16px;max-width:60ch">A descrição dos bônus 02 e 03 precisa ser confirmada com a Michele antes de publicar — os nomes vieram da página atual, o conteúdo exato não.</p>
+  </div>
+</section>
+
+<section class="paper">
+  <div class="wrap">
+    <span class="eyebrow">Risco zero</span>
+    <h2 style="margin-top:10px;max-width:22ch">Trinta dias para decidir com o curso aberto na sua frente.</h2>
+    <div class="gar" style="margin-top:24px">
+      <div class="n">30<span>dias</span></div>
+      <div class="prose">
+        <p>Entre, assista os módulos, use os modelos de proposta com uma cliente de verdade. Se em 30 dias você achar que não era isso, devolvemos o valor integral — <strong>sem pergunta, sem justificativa, sem formulário</strong>.</p>
+        <p>É uma garantia incondicional. O risco de testar fica comigo, não com você.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px">
+    <span class="eyebrow">Sua condição</span>
+    <h2 style="max-width:22ch">O desconto não é de campanha. É de quem já fez a Imersão.</h2>
+    <div class="oferta">
+      <div class="topo">Condição Imersão Personal Organizer</div>
+      <div class="corpo">
+        <p class="de">De <s>R$ 2.497,00</s></p>
+        <p class="por">12x R$ 111<small>,30</small></p>
+        <p class="vista">ou R$ 1.113,00 à vista no PIX</p>
+        <a class="cta big" href="https://clkdmg.site/pay/masterdestravedescontopolucrativa">
+          Quero continuar de onde parei
+          <small>Acesso liberado na hora</small>
+        </a>
+        <ul class="lista">
+          <li><b>12 módulos e mais de 100 aulas</b>, do básico ao avançado</li>
+          <li><b>Comunidade das alunas</b>, com suporte de quem já atende</li>
+          <li><b>Modelos prontos</b> de contrato, proposta e checklist</li>
+          <li><b>Acompanhamento em grupo</b> com a Michele</li>
+          <li><b>Garantia incondicional</b> de 30 dias</li>
+        </ul>
+      </div>
+    </div>
+    <p class="sob" style="max-width:52ch">Os valores acima precisam ser conferidos com a Michele antes de publicar. Usei o preço médio que efetivamente vendeu nos últimos quatro meses (R$ 1.113) e a âncora que já está na página atual (R$ 2.497).</p>
+  </div>
+</section>
+
+<section class="paper">
+  <div class="wrap">
+    <span class="eyebrow q">Antes de entrar</span>
+    <h2 style="margin-top:10px;max-width:20ch">Isto aqui não é para todo mundo.</h2>
+    <div class="nao">
+      <div>
+        <h3>Não é para quem não fez a Imersão</h3>
+        <p>O Master Organizer começa de onde a Imersão parou. Sem ela, os primeiros módulos vão parecer avançados demais e você vai se sentir perdida. Comece pela Imersão.</p>
+      </div>
+      <div>
+        <h3>Não é para quem quer organizar a própria casa</h3>
+        <p>É um programa sobre atender cliente pagante — precificação, contrato, agenda. Se o objetivo é a sua própria casa, não vale o investimento.</p>
+      </div>
+      <div>
+        <h3>Não é para quem espera cliente cair do céu</h3>
+        <p>O módulo de captação funciona, mas exige que você faça o trabalho de aparecer e oferecer. Método não substitui execução.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="eyebrow q">Dúvidas</span>
+    <h2 style="margin-top:10px">Perguntas que quem fez a Imersão costuma fazer</h2>
+    <div class="faq" style="margin-top:24px">
+      <details><summary>O conteúdo repete o que eu já vi na Imersão?</summary>
+        <p>Não. A Imersão te leva do zero até a primeira proposta enviada. O Master Organizer começa exatamente ali e cobre o que a Imersão não tinha tempo de cobrir: execução dentro da casa, pacotes, captação contínua e recorrência.</p></details>
+      <details><summary>Em quanto tempo eu consigo fazer o primeiro serviço pago?</summary>
+        <p>Depende de quanto você já avançou na Imersão. Quem sai da Imersão com a proposta pronta costuma precisar dos módulos de atendimento e precificação antes de cobrar com segurança — o resto é aparecer e oferecer.</p></details>
+      <details><summary>O acesso é vitalício?</summary>
+        <p>Esta informação precisa ser confirmada com a Michele antes de a página ir ao ar — a página atual não deixa claro, e prometer errado aqui gera reembolso depois.</p></details>
+      <details><summary>Consigo parcelar?</summary>
+        <p>Sim, em até 12x no cartão. No PIX ou boleto à vista o valor sai mais barato.</p></details>
+      <details><summary>E se eu entrar e não for para mim?</summary>
+        <p>Você tem 30 dias de garantia incondicional. Pede o reembolso e recebe o valor integral de volta, sem precisar justificar.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
+    <h2 style="max-width:20ch">Você já provou que consegue cobrar. Agora é fazer isso virar mês fechado.</h2>
+    <p style="max-width:52ch">A condição de quem fez a Imersão vale enquanto essa turma estiver aberta.</p>
+    <a class="cta big" href="https://clkdmg.site/pay/masterdestravedescontopolucrativa" style="background:#fff;color:var(--forest);box-shadow:0 2px 0 #C9D8CB,0 12px 30px -14px rgba(0,0,0,.5)">
+      Entrar no Master Organizer
+      <small style="color:#2E6B41">12x R$ 111,30 · garantia de 30 dias</small>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Master Organizer</strong> · Michele Trevisan Organiza</p>
+    <p>Esta página é destinada a quem participou da Imersão Personal Organizer Lucrativa.</p>
+    <p>Resultados citados são de alunas específicas e não representam garantia de resultado. O desempenho depende de aplicação individual.</p>
+  </div>
+</footer>
